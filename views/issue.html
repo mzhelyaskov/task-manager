@@ -1,0 +1,17 @@
+<div class="issue">
+    <table class="issue-info">
+        <tr>
+            <td><%= issue.key %></td>
+            <td><span class="status-label in-progress"><%= issue.status.name %></span></td>
+            <td>
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="username"><%= user.fullname %></span>
+            </td>
+        </tr>
+    </table>
+    <div class="issue-title"><%= title %></div>
+    <time class="issue-deadline"><%= issue.deadline %></time>
+    <div class="bookmark">
+        <span class="glyphicon glyphicon-star"></span>
+    </div>
+</div>

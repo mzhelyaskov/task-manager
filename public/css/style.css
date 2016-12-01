@@ -46,4 +46,255 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+body {
+  font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+}
 
+.form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+/* LOGIN */
+.login-page {
+  background: url("/images/background.jpg") no-repeat;
+  height: 100%;
+  background-size: cover;
+}
+
+.login-form-container {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  height: 480px;
+  width: 500px;
+  margin-left: -250px;
+  background: rgba(3,48,118, 0.8);
+  font-size: 45px;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+
+.login-layout {
+  position: absolute;
+  bottom: 20px;
+  height: 340px;
+  width: 460px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  font-size: 18px;
+  padding: 20px;
+  color: #000;
+}
+
+.login-layout form .help-block {
+  font-size: 12px;
+  color: #b74626;
+  margin-bottom: 0;
+  padding-left: 2px;
+}
+
+.login-layout form button[type="submit"] {
+  width: 100%;
+  height: 40px;
+}
+
+.login-layout form .checkbox {
+  float: left;
+}
+
+.login-layout .input-group[class*="col-"] {
+  padding-right: 15px;
+}
+
+.registration-link {
+  float: right;
+  padding-top: 7px;
+}
+
+.login-with {
+  text-align: center;
+}
+
+.login-with .btn-facebook {
+  float: left;
+}
+
+.login-with .btn-google {
+  float: right;
+}
+
+.login-social-buttons {
+  margin-top: 30px;
+}
+
+.login-with .login-with-left-line {
+  float: left;
+  border: 1px solid #033076;
+  width: 35%;
+}
+
+.login-with .login-with-right-line {
+  float: right;
+  border: 1px solid #033076;
+  width: 35%;
+}
+
+.login-with .login-with-text {
+  margin-bottom: -7px;
+  font-size: 16px;
+}
+/* END LOGIN */
+
+
+.navbar {
+   border: 0;
+}
+
+.navbar-top {
+  background-image: linear-gradient(to bottom, #033076 0%, #033076 100%);
+  border-radius: 0;
+}
+
+.navbar-brand {
+  color: #fff;
+  margin-right: 50px;
+  font-size: 28px;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.nav a {
+  color: #fff;
+}
+
+.nav > li > a {
+  position: relative;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #103c81;
+}
+
+.nav > li > a:hover::after, .nav > li > a:focus::after {
+  content: '';
+  display: block;
+  background-color: #828fd9;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.main-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 60px 340px 20px 220px;
+}
+
+.username {
+  padding: 0 2px;
+}
+
+.status-label {
+  background-color: #f0ad4e;
+  padding: 1px 4px 2px 4px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.issue-container {
+  width: 100%;
+  height: 900px;
+  font-size: 10px;
+}
+
+.issue {
+  position: relative;
+  height: 50px;
+  border: 1px solid #dddddd;
+  border-left: 5px solid #629c44;
+  padding: 5px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 1px 4px 15px -3px rgba(0,0,0,1);
+  -moz-box-shadow: 1px 4px 15px -3px rgba(0,0,0,1);
+  box-shadow: 1px 4px 15px -3px rgba(0,0,0,1);
+}
+
+.issue-info tr td {
+  padding-right: 15px;
+}
+
+.issue-title {
+  font-size: 18px;
+  padding: 8px 0;
+}
+
+.issue-deadline {
+  position: absolute;
+  display: inline-block;
+  font-size: 15px;
+  right: 50px;
+  top: 18px;
+}
+
+.bookmark {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 24px;
+  height: 45px;
+  background-color: #b70f0a;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.bookmark::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  border: 12px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+
+.issue-search-well {
+  padding: 10px;
+  border-radius: 0;
+  height: 85px;
+  position: relative;
+}
+
+.issue-search-input {
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  width: 100%;
+  height: 33px;
+  padding-left: 28px;
+}
+
+.issue-search-icon {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  color: #8c8c8c;
+}
+
+.issues-filter-btn button {
+  border-radius: 0;
+  /* TODO */
+}

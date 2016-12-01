@@ -47,12 +47,6 @@ table {
     border-spacing: 0;
 }
 
-.label {
-    background-color: #f0ad4e;
-    padding: 1px 4px;
-    border-radius: 3px;
-}
-
 .username {
     padding: 0 2px;
 }
@@ -65,7 +59,7 @@ table {
 }
 
 .task-container {
-    width: 800px;
+    width: 100%;
     border: 1px solid black;
     height: 900px;
     padding: 10px;
