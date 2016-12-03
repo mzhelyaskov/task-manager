@@ -58,7 +58,7 @@ body {
   border-radius: 0;
 }
 
-/* LOGIN */
+/* ------------- LOGIN ------------- */
 .login-page {
   background: url("/images/background.jpg") no-repeat;
   height: 100%;
@@ -70,8 +70,8 @@ body {
   top: 60px;
   left: 50%;
   height: 480px;
-  width: 500px;
-  margin-left: -250px;
+  width: 400px;
+  margin-left: -200px;
   background: rgba(3,48,118, 0.8);
   font-size: 45px;
   color: #fff;
@@ -83,12 +83,24 @@ body {
   position: absolute;
   bottom: 20px;
   height: 340px;
-  width: 460px;
+  width: 360px;
   background: rgba(255, 255, 255, 0.8);
   text-align: left;
   font-size: 18px;
   padding: 20px;
   color: #000;
+}
+
+.input-group-sm > .form-control {
+  border-radius: 0;
+}
+
+.input-group-sm > .input-group-addon {
+  border-radius: 0;
+}
+
+.login-layout form {
+  font-size: 16px;
 }
 
 .login-layout form .help-block {
@@ -148,7 +160,7 @@ body {
   margin-bottom: -7px;
   font-size: 16px;
 }
-/* END LOGIN */
+/* ------------- END LOGIN ------------- */
 
 
 .navbar {
