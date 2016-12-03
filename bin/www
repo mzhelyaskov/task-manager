@@ -7,6 +7,21 @@
 var app = require('../app');
 var debug = require('debug')('TodoList:server');
 var http = require('http');
+var env = process.env.NODE_ENV || 'development';
+var config = require('../config').get(env);
+
+/**
+ * Test data base connection 
+ */
+var models = require('../models');
+models.sequelize
+    .authenticate()
+    .then(function () {
+      console.log('Connection to data base [' + config.database + '] successful');
+    })
+    .catch(function(error) {
+      console.log('Error creating connection to data base [' + config.database + ']:', error);
+    });
 
 /**
  * Get port from environment and store in Express.

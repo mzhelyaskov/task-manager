@@ -13,7 +13,7 @@ if (config.use_env_variable) {
 } else {
   var sequelize = new Sequelize(
       config.database,
-      config.user,
+      config.username,
       config.password,
       config.options
   );
