@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource users');
 });
 
+router.get('/:id', function(req, res, next) {
+  res.send('respond with a resource users');
+});
+
 module.exports = router;

@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('app/app');
 var debug = require('debug')('TodoList:server');
 var http = require('http');
 var env = process.env.NODE_ENV || 'development';
@@ -13,7 +13,7 @@ var config = require('../config').get(env);
 /**
  * Test data base connection 
  */
-var models = require('../models');
+var models = require('app/models/index');
 models.sequelize
     .authenticate()
     .then(function () {
