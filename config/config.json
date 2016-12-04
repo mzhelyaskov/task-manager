@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "todo-list",
+    "database": "todo-manager",
     "options": {
       "host": "localhost",
       "dialect": "mysql",
@@ -16,7 +16,7 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "todo-list",
+    "database": "todo-manager",
     "options": {
       "host": "localhost",
       "dialect": "mysql",
@@ -30,7 +30,7 @@
   "production": {
     "username": "root",
     "password": null,
-    "database": "todo-list",
+    "database": "todo-manager",
     "options": {
       "host": "localhost",
       "dialect": "mysql",

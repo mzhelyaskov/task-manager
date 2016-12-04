@@ -2,6 +2,9 @@
 [ ] Создать базу и таблицу для списка проектов
 
 -------------------------------------------------------
+[00-8]  Настроить миграции базы данных.
+        docs: (https://github.com/sequelize/cli)
+        docs: (http://docs.sequelizejs.com/en/latest/docs/migrations/)
 [00-7]  Описание модели User.
         Создание utils для юзеров.
 [00-6]  Проверить соедние с базой данных. Доавить скрип для
@@ -9,8 +12,8 @@
 [00-5]  Установить nconf и создать для него модуль
 [00-4]  Установить Sequelize CLI глобально, добавить в
         package.json, проинициализировать базу данных.
-        npm install -g sequelize-cli
-        Выполнить команду sequelize init
+        npm install -g sequelize-cli docs: (https://github.com/sequelize/cli)
+            * Выполнить команду sequelize init
 [00-3]  Установить Sequelize и добавить в package.json
 [00-2]  Установить MySQL и добавить в package.json
 [00-1]  Создать карту сайта
