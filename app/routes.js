@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
     res.redirect('/projects');
 });
 router.get('/login', auth.login);
+router.post('/login', auth.authorize);
 router.get('/logout', auth.logout);
 router.get('/register', auth.register);
 
