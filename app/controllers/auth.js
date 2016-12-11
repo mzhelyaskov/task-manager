@@ -8,5 +8,5 @@ exports.logout = function (res, req, next) {
 };
 
 exports.register = function (res, req, next) {
-    req.end('register');
+    req.render('register');
 };

@@ -1,53 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
 body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-body {
-  font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+  /*font-family: "Roboto Slab", Helvetica, Arial, sans-serif !important;*/
 }
 
 .form-control {
@@ -59,105 +11,144 @@ body {
 }
 
 /* ------------- LOGIN ------------- */
-.login-page {
+.auth-page {
   background: url("/images/background.jpg") no-repeat;
   height: 100%;
   background-size: cover;
 }
 
-.login-form-container {
+.auth-form-container {
   position: absolute;
-  top: 60px;
-  left: 50%;
-  height: 480px;
-  width: 400px;
-  margin-left: -200px;
   background: rgba(3,48,118, 0.8);
-  font-size: 45px;
   color: #fff;
   text-align: center;
-  padding: 40px 20px 20px 20px;
+  padding: 20px;
 }
 
-.login-layout {
-  position: absolute;
-  bottom: 20px;
-  height: 340px;
-  width: 360px;
+.login-container {
+  top: 60px;
+  left: 50%;
+  margin-left: -185px;
+  width: 370px;
+}
+
+.register-container {
+  top: 60px;
+  left: 50%;
+  margin-left: -400px;
+  width: 800px;
+}
+
+.auth-layout {
   background: rgba(255, 255, 255, 0.8);
   text-align: left;
-  font-size: 18px;
   padding: 20px;
   color: #000;
 }
 
-.input-group-sm > .form-control {
-  border-radius: 0;
+.auth-form-title {
+  font-size: 40px;
+  display: block;
+  padding-bottom: 20px;
 }
 
-.input-group-sm > .input-group-addon {
-  border-radius: 0;
+.auth-layout .form-group {
+  margin-bottom: 8px;
+  position: relative;
 }
 
-.login-layout form {
+.auth-layout input {
+  padding-right: 30px;
+}
+
+.auth-layout .form-group .glyphicon {
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  color: #0f4bac;
+}
+
+.register-form .form-group {
+  height: 55px;
+}
+
+
+.register-layout {
+  width: 760px;
+}
+
+.auth-layout form label {
+  font-weight: normal;
   font-size: 16px;
 }
 
-.login-layout form .help-block {
-  font-size: 12px;
-  color: #b74626;
-  margin-bottom: 0;
-  padding-left: 2px;
-}
-
-.login-layout form button[type="submit"] {
+.auth-layout form button[type="submit"] {
   width: 100%;
   height: 40px;
+  font-size: 18px;
+}
+
+.login-form button[type="submit"] {
+  margin-bottom: 8px;
+}
+
+.register-form button[type="submit"] {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.register-form .form-group .help-block {
+  color: darkred;
 }
 
 .login-layout form .checkbox {
   float: left;
 }
 
-.login-layout .input-group[class*="col-"] {
-  padding-right: 15px;
+.registration-link {
+  display: block;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #fff;
 }
 
-.registration-link {
+.registration-link:hover {
+  color: #fff;
+}
+
+.login-social-buttons .btn-facebook {
+  float: left;
+}
+
+.login-social-buttons .btn-google {
   float: right;
-  padding-top: 7px;
 }
 
 .login-with {
   text-align: center;
 }
 
-.login-with .btn-facebook {
-  float: left;
+.register-form .login-with {
+  margin-top: 50px;
 }
 
-.login-with .btn-google {
-  float: right;
-}
-
-.login-social-buttons {
-  margin-top: 30px;
+.login-with .login-social-buttons {
+  margin-top: 24px;
 }
 
 .login-with .login-with-left-line {
   float: left;
   border: 1px solid #033076;
-  width: 35%;
+  width: 30%;
 }
 
 .login-with .login-with-right-line {
   float: right;
   border: 1px solid #033076;
-  width: 35%;
+  width: 30%;
 }
 
 .login-with .login-with-text {
-  margin-bottom: -7px;
+  margin-bottom: -10px;
   font-size: 16px;
 }
 /* ------------- END LOGIN ------------- */

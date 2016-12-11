@@ -3,65 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>TodoList</title>
-    <link href="/bower_components/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-    <link href="/bower_components/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
     <link href="/css/bootstrap-social.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
-<body class="login-page">
-    <div class="login-form-container">
-        <span>Sign In</span>
-        <div class="login-layout">
-            <form class="form-horizontal">
+<body class="auth-page">
+    <div class="auth-form-container login-container">
+        <span class="auth-form-title">Sign In</span>
+        <div class="auth-layout">
+            <form class="login-form">
+                <label for="username">Username:</label>
                 <div class="form-group">
-                    <label for="username" class="col-sm-4 control-label">Username:</label>
-                    <div class="input-group input-group-sm col-sm-8">
-                        <input type="email" class="form-control" id="username" placeholder="min. 4 character">
-                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                    </div>
-                    <span class="col-sm-offset-4 help-block">A block of e.</span>
+                    <input type="email" class="form-control" id="username" placeholder="min. 4 character">
+                    <span class="glyphicon glyphicon-user"></span>
                 </div>
+                <label for="password">Password:</label>
                 <div class="form-group">
-                    <label for="password" class="col-sm-4 control-label">Password:</label>
-                    <div class="input-group input-group-sm col-sm-8">
-                        <input type="password" class="form-control" id="password" placeholder="min. 8 character">
-                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    </div>
-                    <span class="col-sm-offset-4 help-block">A block of e.</span>
+                    <input type="password" class="form-control" id="password" placeholder="min. 8 character">
+                    <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
-                        </div>
-                        <a class="registration-link" href="/register">Register</a>
-                    </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-warning">SIGN IN</button>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-warning">Sign In</button>
             </form>
-            <div class="login-with">
-                <div class="login-with-text">sign in with</div>
+            <div class="login-with clearfix">
+                <div class="login-with-text">or sign in with</div>
                 <div class="login-with-left-line"></div>
                 <div class="login-with-right-line"></div>
                 <div class="login-social-buttons">
-                    <a class="btn btn-social btn-facebook">
-                        <span class="fa fa-facebook"></span>Twitter
-                    </a>
-                    <a class="btn btn-social btn-google">
-                        <span class="fa fa-google"></span>Google
-                    </a>
+                    <a class="btn btn-social btn-lg btn-facebook"><span class="facebook-icon">f</span> Twitter </a>
+                    <a class="btn btn-social btn-lg btn-google"><span class="google-icon">G</span> Google </a>
                 </div>
             </div>
         </div>
+        <a class="registration-link" href="/register">Create an account</a>
     </div>
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/jquery/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
