@@ -1,4 +1,4 @@
-<nav class="navbar navbar-top" role="navigation">
+    <nav class="navbar navbar-top" role="navigation">
     <div class="container container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed"
@@ -21,6 +21,7 @@
                     <li><a href="#"><%= user.fullName %></a></li>
                     <li><a href="/logout">Logout</a></li>
                     <!--TODO переделать LOGOUT на метод POST-->
+                    <li class="active"><a href="/login">Login</a></li>
                 <% } else { %>
                     <li class="active"><a href="/login">Login</a></li>
                 <% } %>

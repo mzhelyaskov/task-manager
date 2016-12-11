@@ -33,7 +33,7 @@ body {
 }
 
 .register-container {
-  top: 60px;
+  top: 80px;
   left: 50%;
   margin-left: -400px;
   width: 800px;
@@ -107,7 +107,7 @@ body {
 .registration-link {
   display: block;
   font-size: 18px;
-  margin-top: 10px;
+  margin-top: 13px;
   color: #fff;
 }
 
@@ -125,10 +125,6 @@ body {
 
 .login-with {
   text-align: center;
-}
-
-.register-form .login-with {
-  margin-top: 50px;
 }
 
 .login-with .login-social-buttons {
