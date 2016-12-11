@@ -1,20 +1,20 @@
 
-exports.getAll = function (res, req, next) {
+exports.getAll = function (req, res, next) {
     res.render('getAll');
 };
 
-exports.create = function (res, req, next) {
+exports.create = function (req, res, next) {
     res.render('create');
 };
 
-exports.getOne = function (res, req, next) {
+exports.getOne = function (req, res, next) {
     res.render('getOne');
 };
 
-exports.update = function (res, req, next) {
+exports.update = function (req, res, next) {
     res.render('update');
 };
 
-exports.delete = function (res, req, next) {
+exports.delete = function (req, res, next) {
     res.render('delete');
 };
