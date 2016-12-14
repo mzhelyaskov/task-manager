@@ -10,66 +10,78 @@
 </head>
 <body class="auth-page">
     <%- partial('partials/navbar-top') %>
-    <div class="auth-form-container register-container">
-        <span class="auth-form-title">Register</span>
+    <div class="auth-container register-container">
         <div class="auth-layout">
-            <form class="register-form">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="username">Username:</label>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="username" placeholder="min. 4 character">
-                            <span class="glyphicon glyphicon-user"></span>
+            <span class="auth-form-title">Register</span>
+            <div class="auth-form-container">
+                <form class="register-form">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="username">Username:</label>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="username" placeholder="min. 4 character">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="username">Email:</label>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="username" placeholder="email">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <label for="username">Email:</label>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="username" placeholder="email">
-                            <span class="glyphicon glyphicon-envelope"></span>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="firstName">First Name:</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="firstName" placeholder="First name">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="secondName">Second Name:</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="secondName" placeholder="Second name">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="firstName">First Name:</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="firstName" placeholder="First name">
-                            <span class="glyphicon glyphicon-user"></span>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="password">Password:</label>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="min. 8 character">
+                                <span class="glyphicon glyphicon-lock"></span>
+                                <span class="help-block">A block o line.</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="passwordAgain">Password [Again]:</label>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passwordAgain" placeholder="min. 8 character">
+                                <span class="glyphicon glyphicon-lock"></span>
+                                <span class="help-block">A block o line.</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <label for="secondName">Second Name:</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="secondName" placeholder="Second name">
-                            <span class="glyphicon glyphicon-user"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="password">Password:</label>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="password" placeholder="min. 8 character">
-                            <span class="glyphicon glyphicon-lock"></span>
-                            <span class="help-block">A block o line.</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="passwordAgain">Password [Again]:</label>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="passwordAgain" placeholder="min. 8 character">
-                            <span class="glyphicon glyphicon-lock"></span>
-                            <span class="help-block">A block o line.</span>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-warning">Sign Up</button>
-            </form>
+                    <button type="submit" class="btn btn-warning">Sign Up</button>
+                </form>
+            </div>
         </div>
+        <% if (message) { %>
+            <div class="auth-layout message-window" role="alert">
+                <div class="dialog-close-btn">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                </div>
+                <div class="message-container">
+                    <%= message %>
+                </div>
+            </div>
+        <% } %>
     </div>
-
     <script src="/jquery/jquery.js"></script>
     <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/js/ui.js"></script>
 </body>
 </html>

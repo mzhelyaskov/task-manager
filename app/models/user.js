@@ -7,7 +7,11 @@ module.exports = function(sequelize, DataTypes) {
             username: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                validate: {len: [4]}
+                unique: true,
+                validate: {
+                    len: [4],
+                    is: /^[a-z0-9]+$/i
+                }
             },
             email: {
                 type: DataTypes.STRING,
@@ -77,7 +81,7 @@ module.exports = function(sequelize, DataTypes) {
                         if (user && user.checkPassword(password)) {
                             callback(null, user);
                         } else {
-                            callback(null, null);
+                            callback('User not found');
                         }
                     });
                 }

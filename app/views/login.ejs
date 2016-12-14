@@ -9,40 +9,53 @@
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
 <body class="auth-page">
-    <div class="auth-form-container login-container">
-        <span class="auth-form-title">Sign In</span>
+    <div class="auth-container login-container">
         <div class="auth-layout">
-            <form class="login-form" action="/login" method="post">
-                <label for="username">Username:</label>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="min. 4 character" formnovalidate>
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <label for="password">Password:</label>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="min. 8 character" formnovalidate>
-                    <span class="glyphicon glyphicon-lock"></span>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Remember me
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-warning">Sign In</button>
-            </form>
-            <div class="login-with clearfix">
-                <div class="login-with-text">or sign in with</div>
-                <div class="login-with-left-line"></div>
-                <div class="login-with-right-line"></div>
-                <div class="login-social-buttons">
-                    <a class="btn btn-social btn-lg btn-facebook"><span class="facebook-icon">f</span> Twitter </a>
-                    <a class="btn btn-social btn-lg btn-google"><span class="google-icon">G</span> Google </a>
+            <span class="auth-form-title">Sign In</span>
+            <div class="auth-form-container">
+                <form class="login-form" action="/login" method="post">
+                    <label for="username">Username:</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="min. 4 character" formnovalidate>
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <label for="password">Password:</label>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="min. 8 character" formnovalidate>
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-warning">Sign In</button>
+                </form>
+                <div class="login-with clearfix">
+                    <div class="login-with-text">or sign in with</div>
+                    <div class="login-with-left-line"></div>
+                    <div class="login-with-right-line"></div>
+                    <div class="login-social-buttons">
+                        <a class="btn btn-social btn-lg btn-facebook"><span class="facebook-icon">f</span> Twitter </a>
+                        <a class="btn btn-social btn-lg btn-google"><span class="google-icon">G</span> Google </a>
+                    </div>
                 </div>
             </div>
+            <a class="registration-link" href="/register">Create an account</a>
         </div>
-        <a class="registration-link" href="/register">Create an account</a>
+        <% if (message) { %>
+        <div class="auth-layout message-window" role="alert">
+            <div class="dialog-close-btn">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+            </div>
+            <div class="message-container">
+                <%= message %>
+            </div>
+        </div>
+        <% } %>
     </div>
     <script src="/jquery/jquery.js"></script>
     <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/js/ui.js"></script>
 </body>
 </html>

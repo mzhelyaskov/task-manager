@@ -17,12 +17,17 @@ body {
   background-size: cover;
 }
 
-.auth-form-container {
+.auth-container {
   position: absolute;
+}
+
+.auth-layout {
+  position: relative;
   background: rgba(3,48,118, 0.8);
   color: #fff;
   text-align: center;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .login-container {
@@ -39,7 +44,7 @@ body {
   width: 800px;
 }
 
-.auth-layout {
+.auth-form-container {
   background: rgba(255, 255, 255, 0.8);
   text-align: left;
   padding: 20px;
@@ -146,6 +151,35 @@ body {
 .login-with .login-with-text {
   margin-bottom: -10px;
   font-size: 16px;
+}
+
+.dialog-close-btn {
+  background: rgba(3, 48, 118, 1);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dialog-close-btn span {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  font-size: 20px;
+}
+
+.dialog-close-btn span:hover {
+  color: #dddddd;
+}
+
+.message-container {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 20px;
+  color: darkred;
 }
 /* ------------- END LOGIN ------------- */
 

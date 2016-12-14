@@ -1,20 +1,20 @@
 
 exports.getAll = function (req, res, next) {
-    req.end('getAll');
+    res.end('getAll');
 };
 
 exports.create = function (req, res, next) {
-    req.end('create');
+    res.end('create');
 };
 
 exports.getOne = function (req, res, next) {
-    req.end('getOne');
+    res.end('getOne');
 };
 
 exports.update = function (req, res, next) {
-    req.end('update');
+    res.end('update');
 };
 
 exports.delete = function (req, res, next) {
-    req.end('delete');
+    res.end('delete');
 };
