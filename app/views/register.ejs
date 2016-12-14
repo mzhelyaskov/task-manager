@@ -14,19 +14,19 @@
         <div class="auth-layout">
             <span class="auth-form-title">Register</span>
             <div class="auth-form-container">
-                <form class="register-form">
+                <form class="register-form" action="/register" method="post" novalidate>
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="username">Username:</label>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="username" placeholder="min. 4 character">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="min. 4 character">
                                 <span class="glyphicon glyphicon-user"></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <label for="username">Email:</label>
+                            <label for="email">Email:</label>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="username" placeholder="email">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email">
                                 <span class="glyphicon glyphicon-envelope"></span>
                             </div>
                         </div>
@@ -35,14 +35,14 @@
                         <div class="col-sm-6">
                             <label for="firstName">First Name:</label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="firstName" placeholder="First name">
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name">
                                 <span class="glyphicon glyphicon-user"></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <label for="secondName">Second Name:</label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="secondName" placeholder="Second name">
+                                <input type="text" class="form-control" id="secondName" name="secondName" placeholder="Second name">
                                 <span class="glyphicon glyphicon-user"></span>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                         <div class="col-sm-6">
                             <label for="password">Password:</label>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="min. 8 character">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="min. 8 character">
                                 <span class="glyphicon glyphicon-lock"></span>
                                 <span class="help-block">A block o line.</span>
                             </div>
@@ -59,7 +59,7 @@
                         <div class="col-sm-6">
                             <label for="passwordAgain">Password [Again]:</label>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="passwordAgain" placeholder="min. 8 character">
+                                <input type="password" class="form-control" id="passwordAgain" name="passwordAgain" placeholder="min. 8 character">
                                 <span class="glyphicon glyphicon-lock"></span>
                                 <span class="help-block">A block o line.</span>
                             </div>

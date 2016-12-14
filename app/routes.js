@@ -12,6 +12,7 @@ router.get('/login', auth.login);
 router.post('/login', auth.authorize);
 router.get('/logout', auth.logout);
 router.get('/register', auth.register);
+router.post('/register', auth.createAccount);
 
 // users routes
 router.get('/users', users.getAll);

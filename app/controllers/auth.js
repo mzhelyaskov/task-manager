@@ -27,3 +27,14 @@ exports.logout = function (req, res, next) {
 exports.register = function (req, res, next) {
     res.render('register', {message: ''});
 };
+
+exports.createAccount = function(req, res, next) {
+    var username = req.body.username;
+    var email = req.body.email;
+    var firstName = req.body.firstName;
+    var secondName = req.body.secondName;
+    var password = req.body.password;
+    var passwordAgain = req.body.passwordAgain;
+
+    console.log(username, email, firstName, secondName, password, passwordAgain);
+};
