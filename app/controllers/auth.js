@@ -34,5 +34,19 @@ exports.register = function (req, res, next) {
 };
 
 exports.createAccount = function(req, res, next) {
-    console.log('Создаем нового пользователя в баще данных');
+    var user = User.build({
+        username: req.body.username,
+        email: req.body.email,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
+    });
+    user.set('password', req.body.password);
+    user.save()
+        .then(function() {
+            res.locals.user = user;
+            res.redirect('/');
+        })
+        .catch(function(err) {
+            next(err)
+        });
 };

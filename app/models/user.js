@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull: false,
                 unique: true,
                 validate: {
-                    len: [4],
+                    len: [3],
                     is: /^[a-z0-9]+$/i
                 }
             },
