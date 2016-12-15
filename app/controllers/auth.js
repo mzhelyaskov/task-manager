@@ -1,4 +1,5 @@
 var User = require('../models').User;
+var util = require('util');
 
 exports.login = function (req, res, next) {
     res.render('login', {message: ''});
@@ -25,16 +26,13 @@ exports.logout = function (req, res, next) {
 };
 
 exports.register = function (req, res, next) {
-    res.render('register', {message: ''});
+    res.render('register', {
+        message: '',
+        errors: {},
+        fields: {}
+    });
 };
 
 exports.createAccount = function(req, res, next) {
-    var username = req.body.username;
-    var email = req.body.email;
-    var firstName = req.body.firstName;
-    var secondName = req.body.secondName;
-    var password = req.body.password;
-    var passwordAgain = req.body.passwordAgain;
-
-    console.log(username, email, firstName, secondName, password, passwordAgain);
+    console.log('Создаем нового пользователя в баще данных');
 };
