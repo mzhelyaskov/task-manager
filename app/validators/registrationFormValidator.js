@@ -28,6 +28,7 @@ module.exports = function(req, res, next) {
             return;
         }
         var username = req.body.username;
+        var email = req.body.email;
         var password = req.body.password;
         var password2 = req.body.password2;
 
@@ -37,7 +38,7 @@ module.exports = function(req, res, next) {
             return;
         }
 
-        User.findOne({where: {username: username}}).then(function(user) {
+        User.findOne({where: {$or: [{username: username}, {email: email}]}}).then(function(user) {
             if (user) {
                 validationRes.message = 'User with username: ' + user.username + ' is already exists.';
                 res.render('register', validationRes);

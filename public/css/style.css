@@ -194,8 +194,10 @@ body {
 
 .navbar-brand {
   color: #fff;
-  margin-right: 50px;
-  font-size: 28px;
+  line-height: 24px;
+  margin-right: 15px;
+  font-size: 40px;
+  font-family: "Indie Flower", serif;
 }
 
 .navbar-brand:hover {

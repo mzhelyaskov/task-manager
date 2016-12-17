@@ -20,8 +20,6 @@
                 <% if (user) { %>
                     <li><a href="#"><%= user.fullName %></a></li>
                     <li><a href="/logout">Logout</a></li>
-                    <!--TODO переделать LOGOUT на метод POST-->
-                    <li class="active"><a href="/login">Login</a></li>
                 <% } else { %>
                     <li class="active"><a href="/login">Login</a></li>
                 <% } %>

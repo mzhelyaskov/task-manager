@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var registrationFormValidator = require('./validators/registrationFormValidator');
-
+var checkAuth = require('./middleware/checkAuth');
 var auth = require('./controllers/auth');
 var users = require('./controllers/users');
 var projects = require('./controllers/projects');
@@ -16,19 +16,19 @@ router.get('/register', auth.register);
 router.post('/register', registrationFormValidator, auth.createAccount);
 
 // users routes
-router.get('/users', users.getAll);
-router.post('/users', users.create);
-router.get('/users/:id', users.getOne);
-router.put('/users/:id', users.update);
-router.delete('/users/:id', users.delete);
+router.get('/users', checkAuth, users.getAll);
+router.post('/users', checkAuth, users.create);
+router.get('/users/:id', checkAuth, users.getOne);
+router.put('/users/:id', checkAuth, users.update);
+router.delete('/users/:id', checkAuth, users.delete);
 
 // projects routes
-router.get('/projects', projects.getAll);
-router.post('/projects', projects.create);
-router.delete('/projects', projects.delete);
-router.get('/projects/:id', projects.getOne);
-router.put('/projects/:id', projects.update);
-router.delete('/projects/:id', projects.delete);
+router.get('/projects', checkAuth, projects.getAll);
+router.post('/projects', checkAuth, projects.create);
+router.delete('/projects', checkAuth, projects.delete);
+router.get('/projects/:id', checkAuth, projects.getOne);
+router.put('/projects/:id', checkAuth, projects.update);
+router.delete('/projects/:id', checkAuth, projects.delete);
 
 module.exports = router;
 

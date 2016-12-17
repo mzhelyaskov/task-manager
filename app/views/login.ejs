@@ -13,15 +13,15 @@
         <div class="auth-layout">
             <span class="auth-form-title">Sign In</span>
             <div class="auth-form-container">
-                <form class="login-form" action="/login" method="post">
+                <form class="login-form" action="/login" method="post" novalidate>
                     <label for="username">Username:</label>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="min. 4 character" formnovalidate>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Your username">
                         <span class="glyphicon glyphicon-user"></span>
                     </div>
                     <label for="password">Password:</label>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="min. 8 character" formnovalidate>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
                         <span class="glyphicon glyphicon-lock"></span>
                     </div>
                     <div class="checkbox">

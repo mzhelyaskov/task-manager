@@ -17,12 +17,21 @@ exports.authorize = function (req, res, next) {
             }
             return;
         }
-        res.redirect('/');
+        req.session.user = user;
+        req.session.userId = user.id;
+        req.session.authenticated = true;
+        res.redirect('/projects');
     });
 };
 
 exports.logout = function (req, res, next) {
-    res.end('logout');
+    req.session.destroy(function(err) {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.render('login', {message: ''});
+    });
 };
 
 exports.register = function (req, res, next) {
@@ -42,8 +51,10 @@ exports.createAccount = function(req, res, next) {
     });
     user.set('password', req.body.password);
     user.save()
-        .then(function() {
-            res.locals.user = user;
+        .then(function(user) {
+            req.session.user = user;
+            req.session.userId = user.id;
+            req.session.authenticated = true;
             res.redirect('/');
         })
         .catch(function(err) {

@@ -1,6 +1,6 @@
 
 exports.getAll = function (req, res, next) {
-    res.end('getAll');
+    res.render('projects');
 };
 
 exports.create = function (req, res, next) {
