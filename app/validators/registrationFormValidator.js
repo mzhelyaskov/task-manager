@@ -37,10 +37,11 @@ module.exports = function(req, res, next) {
             res.render('register', validationRes);
             return;
         }
-
         User.findOne({where: {$or: [{username: username}, {email: email}]}}).then(function(user) {
             if (user) {
-                validationRes.message = 'User with username: ' + user.username + ' is already exists.';
+                var field = user.username === username ? 'username' : 'email';
+                var value = user.username === username ? username : email;
+                validationRes.message = 'User with ' + field + ': "' + value + '" is already exists.';
                 res.render('register', validationRes);
             } else {
                 next();

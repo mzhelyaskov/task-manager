@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="username">Username:</label>
-                            <div class="form-group">
+                            <div class="form-group <% if (errors.username) { %>has-error<% } %>">
                                 <input type="text" class="form-control" name="username" placeholder="min. 4 character" value="<%- fields.username %>" autocomplete="off">
                                 <span class="glyphicon glyphicon-user"></span>
                                 <% if (errors.username) { %><span class="help-block"><%= errors.username.msg %></span><% } %>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="email">Email:</label>
-                            <div class="form-group">
+                            <div class="form-group <% if (errors.email) { %>has-error<% } %>">
                                 <input type="email" class="form-control" name="email" placeholder="email" value="<%- fields.email %>">
                                 <span class="glyphicon glyphicon-envelope"></span>
                                 <% if (errors.email) { %><span class="help-block"><%= errors.email.msg %></span><% } %>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="firstName">First Name:</label>
-                            <div class="form-group">
+                            <div class="form-group <% if (errors.firstName) { %>has-error<% } %>">
                                 <input type="text" class="form-control" name="firstName" placeholder="First name" value="<%- fields.firstName %>" autocomplete="off">
                                 <span class="glyphicon glyphicon-user"></span>
                                 <% if (errors.firstName) { %><span class="help-block"><%= errors.firstName.msg %></span><% } %>
@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="password">Password:</label>
-                            <div class="form-group">
+                            <div class="form-group <% if (errors.password) { %>has-error<% } %>">
                                 <input type="password" class="form-control" name="password" placeholder="min. 8 character" value="<%- fields.password %>">
                                 <span class="glyphicon glyphicon-lock"></span>
                                 <% if (errors.password) { %><span class="help-block"><%= errors.password.msg %></span><% } %>
@@ -62,10 +62,10 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="password2">Password [Again]:</label>
-                            <div class="form-group">
+                            <div class="form-group <% if (errors.password2) { %>has-error<% } %>">
                                 <input type="password" class="form-control" name="password2" placeholder="min. 8 character" value="<%- fields.password2 %>">
                                 <span class="glyphicon glyphicon-lock"></span>
-                                <% if (errors.passwordAgain) { %><span class="help-block"><%= errors.passwordAgain.msg %></span><% } %>
+                                <% if (errors.password2) { %><span class="help-block"><%= errors.password2.msg %></span><% } %>
                             </div>
                         </div>
                     </div>
