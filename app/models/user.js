@@ -62,7 +62,7 @@ module.exports = function(sequelize, DataTypes) {
             underscored: true,
             getterMethods: {
                 fullName: function() {
-                    if (this.firstname && this.secondname) {
+                    if (this.firstName && this.lastName) {
                         return this.firstName + ' ' + this.lastName;
                     }
                     return this.username;

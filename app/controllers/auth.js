@@ -17,7 +17,6 @@ exports.authorize = function (req, res, next) {
             }
             return;
         }
-        req.session.user = user;
         req.session.userId = user.id;
         req.session.authenticated = true;
         res.redirect('/projects');
@@ -25,12 +24,18 @@ exports.authorize = function (req, res, next) {
 };
 
 exports.logout = function (req, res, next) {
-    req.session.destroy(function(err) {
-        if (err) {
-            next(err);
-            return;
+    User.findById(req.session.userId).then(function(user) {
+        if (user) {
+            req.session.destroy(function(err) {
+                if (err) {
+                    next(err);
+                    return;
+                }
+                res.render('login', {message: ''});
+            });
+        } else {
+            next(new Error('Logout failed'));
         }
-        res.render('login', {message: ''});
     });
 };
 
@@ -52,7 +57,6 @@ exports.createAccount = function(req, res, next) {
     user.set('password', req.body.password);
     user.save()
         .then(function(user) {
-            req.session.user = user;
             req.session.userId = user.id;
             req.session.authenticated = true;
             res.redirect('/');

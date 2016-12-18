@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
-var session = require('express-session');
 var app = express();
 
 // view engine setup
@@ -17,15 +16,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(expressValidator());
-var hour = 1000 * 60 * 60;
-app.use(session({
-    name: 'sid',
-    secret: 'keyboard cat',
-    cookie: {maxAge: hour},
-    resave: false,
-    rolling: true,
-    saveUninitialized: false
-}));
+
+app.use(require('./middleware/session'));
 app.use(express.static(path.join('./', 'public')));
 
 /* middleware */
