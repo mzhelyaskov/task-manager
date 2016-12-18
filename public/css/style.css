@@ -10,6 +10,10 @@ body {
   border-radius: 0;
 }
 
+.btn span {
+  margin-right: 10px;
+}
+
 /* ------------- LOGIN ------------- */
 .auth-page {
   background: url("/images/background.jpg") no-repeat;
@@ -306,29 +310,32 @@ body {
   border-bottom: 8px solid #fff;
 }
 
-.issue-search-well {
+.search-well {
   padding: 10px;
   border-radius: 0;
-  height: 85px;
-  position: relative;
 }
 
-.issue-search-input {
+.search-group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.search-input {
   border: 1px solid #cccccc;
   border-radius: 0;
-  width: 100%;
+  width: 80%;
   height: 33px;
   padding-left: 28px;
 }
 
-.issue-search-icon {
+.search-icon {
   position: absolute;
-  top: 18px;
-  left: 16px;
+  top: 11px;
+  left: 9px;
   color: #8c8c8c;
 }
 
-.issues-filter-btn button {
+.filter-btn button {
   border-radius: 0;
   /* TODO */
 }

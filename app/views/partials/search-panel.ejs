@@ -1,9 +1,16 @@
-<div class="well issue-search-well">
-    <span class="glyphicon glyphicon-search issue-search-icon"></span>
-    <input type="text" class="issue-search-input" placeholder="Enter title or issue-key">
-    <div class="btn-group issues-filter-btn" role="group" aria-label="...">
+<div class="well search-well">
+    <div class="form-group search-group">
+        <input type="text" class="search-input" placeholder="Enter title or issue-key">
+        <span class="glyphicon glyphicon-search search-icon"></span>
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#createProjectModal">
+            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+            <span>Create New Project</span>
+        </button>
+    </div>
+    <div class="btn-group filter-btn" role="group">
         <button type="button" class="btn btn-default">All</button>
         <button type="button" class="btn btn-default">Completed</button>
         <button type="button" class="btn btn-default">Uncompleted</button>
     </div>
+    <%- partial('create-new-project-modal') %>
 </div>
