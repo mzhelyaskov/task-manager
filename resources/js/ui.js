@@ -20,6 +20,6 @@ for (var i = 0; i < inputs.length; i++) {
         var target = event.target;
         var inputParent = target.parentNode;
         var helpBlock = inputParent.querySelector('.help-block');
-        helpBlock && inputParent.removeChild(helpBlock);
+        if (helpBlock) inputParent.removeChild(helpBlock);
     });
 }

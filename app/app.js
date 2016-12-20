@@ -11,14 +11,15 @@ app.engine('ejs', require('ejs-locals'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(favicon(path.join('./', 'public', 'favicon.ico')));
+app.use(favicon(path.join('./', 'static', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(expressValidator());
 
 app.use(require('./middleware/session'));
-app.use(express.static(path.join('./', 'public')));
+app.use(express.static(path.join('./', 'resources')));
+app.use(express.static(path.join('./', 'static')));
 
 /* middleware */
 app.use(require('./middleware/loadUser'));
