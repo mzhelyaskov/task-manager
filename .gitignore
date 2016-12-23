@@ -4,4 +4,4 @@ migrations/
 materials/
 static/
 Gruntfile.js
-.sass-cache/
+.*
