@@ -330,7 +330,7 @@ body {
 
 .search-icon {
   position: absolute;
-  top: 11px;
+  top: 10px;
   left: 9px;
   color: #8c8c8c;
 }
@@ -338,4 +338,36 @@ body {
 .filter-btn button {
   border-radius: 0;
   /* TODO */
+}
+
+.project-list-title {
+  font-weight: bold;
+}
+
+.project {
+  border-left: 5px solid #0f4bac;
+  padding: 10px;
+  -webkit-box-shadow: 6px 6px 16px -8px rgba(0,0,0,0.22);
+  -moz-box-shadow: 6px 6px 16px -8px rgba(0,0,0,0.22);
+  box-shadow: 6px 6px 16px -8px rgba(0,0,0,0.22);
+  margin-bottom: 5px;
+
+  .row > div[class*="col-"] {
+    line-height: 37px;
+
+    .glyphicon {
+      cursor: pointer;
+
+      &:hover {
+        color: #b74626;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #f6f6f6;
+    -webkit-box-shadow: 6px 6px 16px -8px rgba(105,68,227,1);
+    -moz-box-shadow: 6px 6px 16px -8px rgba(105,68,227,1);
+    box-shadow: 6px 6px 16px -8px rgba(105,68,227,1);
+  }
 }
