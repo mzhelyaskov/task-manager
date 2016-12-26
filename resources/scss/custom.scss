@@ -374,3 +374,13 @@ body {
     @include project-shadow(rgba(105, 68, 227, 1));
   }
 }
+
+.modal-body {
+  max-height: 600px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.modal-content {
+  background-color: #ededed;
+}
