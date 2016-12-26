@@ -48,7 +48,8 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: ['resources/scripts/**/*.js'],
-                tasks: ['concat', 'uglify']
+                tasks: ['concat']
+                // tasks: ['concat', 'uglify']
             },
             css: {
                 files: ['resources/scss/**/*.scss'],

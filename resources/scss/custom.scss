@@ -344,12 +344,17 @@ body {
   font-weight: bold;
 }
 
+@mixin project-shadow($rgb-color) {
+  -webkit-box-shadow: 6px 6px 16px -8px $rgb-color;
+  -moz-box-shadow: 6px 6px 16px -8px $rgb-color;
+  box-shadow: 6px 6px 16px -8px $rgb-color;
+}
+
 .project {
+  border: 1px solid #d9d9d9;
   border-left: 5px solid #0f4bac;
   padding: 10px;
-  -webkit-box-shadow: 6px 6px 16px -8px rgba(0,0,0,0.22);
-  -moz-box-shadow: 6px 6px 16px -8px rgba(0,0,0,0.22);
-  box-shadow: 6px 6px 16px -8px rgba(0,0,0,0.22);
+  @include project-shadow(rgba(0, 0, 0, 0.22));
   margin-bottom: 5px;
 
   .row > div[class*="col-"] {
@@ -366,8 +371,6 @@ body {
 
   &:hover {
     background-color: #f6f6f6;
-    -webkit-box-shadow: 6px 6px 16px -8px rgba(105,68,227,1);
-    -moz-box-shadow: 6px 6px 16px -8px rgba(105,68,227,1);
-    box-shadow: 6px 6px 16px -8px rgba(105,68,227,1);
+    @include project-shadow(rgba(105, 68, 227, 1));
   }
 }

@@ -37,4 +37,8 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.ProjectType.count().then(function(count) {
+  if (!count) {db.ProjectType.create({name: 'Service'})}
+});
+
 module.exports = db;

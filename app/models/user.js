@@ -75,7 +75,10 @@ module.exports = function(sequelize, DataTypes) {
             },
             classMethods: {
                 associate: function(models) {
-                    // associations can be defined here
+                    User.hasMany(models.Project, {
+                        foreignKey: 'project_lead',
+                        as: 'lead'
+                    });
                 },
                 authorize: function(username, password, callback) {
                     User.findOne({where: {username: username}}).then(function(user) {
