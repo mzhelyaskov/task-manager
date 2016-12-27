@@ -1,3 +1,391 @@
-@charset "UTF-8";
+body {
+  /*font-family: "Roboto Slab", Helvetica, Arial, sans-serif !important;*/
+}
 
-@import "custom";
+.form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn span {
+  margin-right: 10px;
+}
+
+/* ------------- LOGIN ------------- */
+.auth-page {
+  background: url("/img/background.jpg") no-repeat;
+  height: 100%;
+  background-size: cover;
+}
+
+.auth-container {
+  position: absolute;
+}
+
+.auth-layout {
+  position: relative;
+  background: rgba(3,48,118, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.login-container {
+  top: 60px;
+  left: 50%;
+  margin-left: -185px;
+  width: 370px;
+}
+
+.register-container {
+  top: 80px;
+  left: 50%;
+  margin-left: -400px;
+  width: 800px;
+}
+
+.auth-form-container {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 20px;
+  color: #000;
+}
+
+.auth-form-title {
+  font-size: 40px;
+  display: block;
+  padding-bottom: 20px;
+}
+
+.auth-layout .form-group {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.auth-layout input {
+  padding-right: 30px;
+}
+
+.auth-layout .form-group .glyphicon {
+  position: absolute;
+  top: 11px;
+  right: 9px;
+  color: #0f4bac;
+}
+
+.register-form .form-group {
+  height: 55px;
+}
+
+.register-layout {
+  width: 760px;
+}
+
+.auth-layout form label {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.auth-layout form button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+}
+
+.login-form button[type="submit"] {
+  margin-bottom: 8px;
+}
+
+.register-form button[type="submit"] {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.register-form .form-group .help-block {
+  color: darkred;
+}
+
+.login-layout form .checkbox {
+  float: left;
+}
+
+.registration-link {
+  display: block;
+  font-size: 18px;
+  margin-top: 13px;
+  color: #fff;
+}
+
+.registration-link:hover {
+  color: #fff;
+}
+
+.login-social-buttons .btn-facebook {
+  float: left;
+}
+
+.login-social-buttons .btn-google {
+  float: right;
+}
+
+.login-with {
+  text-align: center;
+}
+
+.login-with .login-social-buttons {
+  margin-top: 24px;
+}
+
+.login-with .login-with-left-line {
+  float: left;
+  border: 1px solid #033076;
+  width: 30%;
+}
+
+.login-with .login-with-right-line {
+  float: right;
+  border: 1px solid #033076;
+  width: 30%;
+}
+
+.login-with .login-with-text {
+  margin-bottom: -10px;
+  font-size: 16px;
+}
+
+.dialog-close-btn {
+  background: rgba(3, 48, 118, 1);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dialog-close-btn span {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  font-size: 20px;
+}
+
+.dialog-close-btn span:hover {
+  color: #dddddd;
+}
+
+.message-container {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 20px;
+  color: darkred;
+}
+/* ------------- END LOGIN ------------- */
+
+
+.navbar {
+  border: 0;
+}
+
+.navbar-top {
+  background-image: linear-gradient(to bottom, #033076 0%, #033076 100%);
+  border-radius: 0;
+}
+
+.navbar-brand {
+  color: #fff;
+  line-height: 24px;
+  margin-right: 15px;
+  font-size: 30px;
+  font-family: "Indie Flower", serif;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.nav a {
+  color: #fff;
+}
+
+.nav > li > a {
+  position: relative;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #103c81;
+}
+
+.nav > li > a:hover::after, .nav > li > a:focus::after {
+  content: '';
+  display: block;
+  background-color: #828fd9;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.main-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 60px 340px 20px 220px;
+}
+
+.username {
+  padding: 0 2px;
+}
+
+.status-label {
+  background-color: #f0ad4e;
+  padding: 1px 4px 2px 4px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.issue-container {
+  width: 100%;
+  height: 900px;
+  font-size: 10px;
+}
+
+.issue {
+  position: relative;
+  height: 50px;
+  border: 1px solid #dddddd;
+  border-left: 5px solid #629c44;
+  padding: 5px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 1px 4px 15px -3px rgba(0,0,0,1);
+  -moz-box-shadow: 1px 4px 15px -3px rgba(0,0,0,1);
+  box-shadow: 1px 4px 15px -3px rgba(0,0,0,1);
+}
+
+.issue-info tr td {
+  padding-right: 15px;
+}
+
+.issue-title {
+  font-size: 18px;
+  padding: 8px 0;
+}
+
+.issue-deadline {
+  position: absolute;
+  display: inline-block;
+  font-size: 15px;
+  right: 50px;
+  top: 18px;
+}
+
+.bookmark {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 24px;
+  height: 45px;
+  background-color: #b70f0a;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.bookmark::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  border: 12px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+
+.search-well {
+  padding: 10px;
+  border-radius: 0;
+}
+
+.search-group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  width: 80%;
+  height: 33px;
+  padding-left: 28px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 9px;
+  color: #8c8c8c;
+}
+
+.filter-btn button {
+  border-radius: 0;
+  /* TODO */
+}
+
+.project-list-title {
+  font-weight: bold;
+}
+
+@mixin project-shadow($rgb-color) {
+  -webkit-box-shadow: 6px 6px 16px -8px $rgb-color;
+  -moz-box-shadow: 6px 6px 16px -8px $rgb-color;
+  box-shadow: 6px 6px 16px -8px $rgb-color;
+}
+
+.project {
+  border: 1px solid #d9d9d9;
+  border-left: 5px solid #0f4bac;
+  padding: 10px;
+  @include project-shadow(rgba(0, 0, 0, 0.22));
+  margin-bottom: 5px;
+
+  .row > div[class*="col-"] {
+    line-height: 37px;
+
+    .glyphicon {
+      cursor: pointer;
+
+      &:hover {
+        color: #b74626;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #f6f6f6;
+    @include project-shadow(rgba(105, 68, 227, 1));
+  }
+}
+
+.modal-body {
+  max-height: 600px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.modal-content {
+  background-color: #ededed;
+}
+
+label.error {
+  color: #b33f3f;
+  font-size: 12px;
+}

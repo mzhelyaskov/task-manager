@@ -1,0 +1,43 @@
+<% layout('../modal-template') -%>
+
+<form id="create-project-form" class="form-horizontal " novalidate autocomplete="off">
+  <div class="form-group">
+    <label for="project-name" class="col-sm-2 control-label">Project name: *</label>
+    <div class="col-sm-10">
+      <input id="project-name" class="form-control" type="text" name="name" value="<%- fields.name %>" />
+      <% if (errors.name) { %><label id="project-name-error" class="error" for="project-name"><%= errors.name.msg %></label><% } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="project-key" class="col-sm-2 control-label">Key: *</label>
+    <div class="col-sm-10">
+      <input id="project-key" class="form-control" type="text" name="key" value="<%- fields.key %>" />
+      <% if (errors.key) { %><label id="project-key-error" class="error" for="project-key"><%= errors.key.msg %></label><% } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="project-type" class="col-sm-2 control-label">Type: *</label>
+    <div class="col-sm-10">
+      <select id="project-type" class="form-control" name="typeId">
+        <% types.forEach(function(type) { %>
+            <option value="<%= type.id %>" <% if(type.id === fields.typeId) { %>selected<% } %>><%= type.name %></option>
+        <% }); %>
+      </select>
+      <% if (errors.typeId) { %><label id="project-type-error" class="error" for="project-type"><%= errors.typeId.msg %></label><% } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description:</label>
+    <div class="col-sm-10">
+      <textarea id="description" class="form-control" name="description" rows="5"><%- fields.description %></textarea>
+      <% if (errors.description) { %><label id="description-error" class="error" for="description"><%= errors.description.msg %></label><% } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="project-lead" class="col-sm-2 control-label">Project lead: *</label>
+    <div class="col-sm-10">
+      <input id="project-lead" class="form-control" type="text" name="lead" value="<%- fields.lead %>" />
+      <% if (errors.lead) { %><label id="project-lead-error" class="error" for="project-lead"><%= errors.lead.msg %></label><% } %>
+    </div>
+  </div>
+</form>
