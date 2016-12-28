@@ -1,7 +1,7 @@
 
 function closeFormErrorMessageWindow(event) {
     var target = event.target;
-    while (target != document && target.classList && !target.classList.contains('dialog-close-btn')) {
+    while (target && target != document && target.classList && !target.classList.contains('dialog-close-btn')) {
         target = target.parentNode;
     }
     if (target instanceof HTMLElement && target.classList.contains('dialog-close-btn')) {

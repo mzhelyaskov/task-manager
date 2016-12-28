@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "countLimitOnPage": 3
+  },
   "development": {
     "username": "root",
     "password": "root",

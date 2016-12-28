@@ -1,0 +1,19 @@
+<% layout('../layout') -%>
+<%- partial('../partials/search-panel') %>
+
+<div class="row project-list-title">
+    <div class="col-lg-12">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">Project</div>
+        <div class="col-lg-2">Key</div>
+        <div class="col-lg-2">Type</div>
+        <div class="col-lg-3">Project Lead</div>
+        <div class="col-lg-1">Control</div>
+    </div>
+</div>
+
+<div id="projects-container"></div>
+
+<ul id="pagination-demo" class="pagination-sm"></ul>
+
+<% script('/libs/jquery-pagination/jquery-twbs-pagination.js') -%>

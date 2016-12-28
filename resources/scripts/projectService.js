@@ -1,3 +1,32 @@
+var $pagination = $('#pagination-demo');
+var defaultOpts = {
+    totalPages: 1,
+    visiblePages: 1,
+    initiateStartPageClick: true,
+    onPageClick: function (event, page) {
+        $.ajax({
+            method: 'GET',
+            data: {
+                query: '',
+                page : page
+            },
+            url: '/projects-for-page',
+            success: function (data) {
+                var currentPage = $pagination.twbsPagination('getCurrentPage');
+                $pagination.twbsPagination('destroy');
+                $pagination.twbsPagination($.extend({}, defaultOpts, {
+                    initiateStartPageClick: false,
+                    startPage: currentPage,
+                    totalPages: data.totalPages,
+                    visiblePages: Math.min(7, data.totalPages)
+                }));
+                $('#projects-container').html(data.projectsHtml);
+            }
+        });
+    }
+};
+$pagination.twbsPagination(defaultOpts);
+
 $.validator.addMethod(
     "regex",
     function(value, element, regexp) {

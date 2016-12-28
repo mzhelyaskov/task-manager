@@ -25,6 +25,7 @@ router.delete('/users/:id', checkAuth, users.delete);
 
 // projects api routes
 router.get('/projects', checkAuth, projects.getAll);
+router.get('/projects-for-page', checkAuth, projects.getProjectsForPage);
 router.post('/projects', checkAuth, newProjectFormValidation, projects.create);
 router.delete('/projects', checkAuth, projects.delete);
 router.get('/projects/:id', checkAuth, projects.getOne);

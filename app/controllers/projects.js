@@ -1,26 +1,52 @@
 var Project = require('../models').Project;
 var User = require('../models').User;
 var ProjectType = require('../models').ProjectType;
+var projectsConfig = require('../../config').get('projects');
 
 exports.getAll = function (req, res) {
-    Project.findAll({
+    res.render('projects/project-page');
+};
+
+exports.getProjectsForPage = function(req, res) {
+    var page = +req.param('page');
+    var query = req.param('query');
+    var limit = projectsConfig.countLimitOnPage;
+    var offset = (page - 1) * limit;
+    Project.findAndCountAll({
+        where: {name: {$like: '%' + query + '%'}},
+        offset: offset,
+        limit: limit,
         include: [
             { model: User, as: 'lead' },
             { model: ProjectType, as: 'type' }
         ]
-    }).then(function(projects) {
-        res.render('projects/project-list', {
-            projects: projects.map(function(project) {
-                return {
-                    name: project.name,
-                    key: project.key,
-                    type: project.type.name,
-                    lead: project.lead
+    }).then(function(result) {
+        var projects = result.rows;
+        res.render('projects/projects-list',
+            {
+                projects: projects.map(function(project) {
+                    return {
+                        name: project.name,
+                        key: project.key,
+                        type: project.type.name,
+                        lead: project.lead
+                    }
+                })
+            },
+            function(err, projectsHtml) {
+                if (err) {
+                    next(err);
+                    return;
                 }
-            })
-        });
+                res.json({
+                    totalPages: Math.ceil(result.count / limit),
+                    projectsHtml: projectsHtml
+                });
+            }
+        );
     });
 };
+
 
 exports.create = function (req, res) {
     //TODO доделать получение project_lead из формы
