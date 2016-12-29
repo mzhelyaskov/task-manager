@@ -1,49 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TodoList</title>
-    <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-    <link href="/libs/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
-    <link href="/libs/bootstrap/css/bootstrap-social.css" rel="stylesheet"/>
-    <link href="/css/styles.css" rel="stylesheet"/>
-</head>
-<body class="auth-page">
-    <div class="auth-container login-container">
-        <div class="auth-layout">
-            <span class="auth-form-title">Sign In</span>
-            <div class="auth-form-container">
-                <form class="login-form" action="/login" method="post" novalidate>
-                    <label for="username">Username:</label>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Your username">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </div>
-                    <label for="password">Password:</label>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
-                        <span class="glyphicon glyphicon-lock"></span>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Remember me
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-warning">Sign In</button>
-                </form>
-                <div class="login-with clearfix">
-                    <div class="login-with-text">or sign in with</div>
-                    <div class="login-with-left-line"></div>
-                    <div class="login-with-right-line"></div>
-                    <div class="login-social-buttons">
-                        <a class="btn btn-social btn-lg btn-facebook"><span class="facebook-icon">f</span> Twitter </a>
-                        <a class="btn btn-social btn-lg btn-google"><span class="google-icon">G</span> Google </a>
-                    </div>
+<% layout('layout') -%>
+
+<div class="auth-container login-container">
+    <div class="auth-layout">
+        <span class="auth-form-title">Sign In</span>
+        <div class="auth-form-container">
+            <form class="login-form" action="/login" method="post" novalidate>
+                <label for="username">Username:</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Your username">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <label for="password">Password:</label>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
+                    <span class="glyphicon glyphicon-lock"></span>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-warning">Sign In</button>
+            </form>
+            <div class="login-with clearfix">
+                <div class="login-with-text">or sign in with</div>
+                <div class="login-with-left-line"></div>
+                <div class="login-with-right-line"></div>
+                <div class="login-social-buttons">
+                    <a class="btn btn-lg btn-primary pull-left">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <div>Twitter</div>
+                    </a>
+                    <a class="btn btn-lg btn-danger pull-right"><i class="fa fa-google-plus" aria-hidden="true"></i> Google </a>
                 </div>
             </div>
-            <a class="registration-link" href="/register">Create an account</a>
         </div>
-        <% if (message) { %>
+        <a class="registration-link" href="/register">Create an account</a>
+    </div>
+    <% if (message) { %>
         <div class="auth-layout message-window" role="alert">
             <div class="dialog-close-btn">
                 <span class="glyphicon glyphicon-remove-circle"></span>
@@ -52,10 +46,5 @@
                 <%= message %>
             </div>
         </div>
-        <% } %>
-    </div>
-    <script src="/libs/jquery/jquery.js"></script>
-    <script src="/libs/bootstrap/js/bootstrap.js"></script>
-    <script src="/js/app.min.js"></script>
-</body>
-</html>
+    <% } %>
+</div>

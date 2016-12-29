@@ -1,71 +1,107 @@
 module.exports = function(grunt) {
 
+    require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        path: {
+            build: 'static/build',
+            tmp: 'static/tmp',
+            libs: 'static/libs',
+            bower: 'static/bower_components',
+            css: 'static/css',
+            scss: 'static/scss'
+        },
+        clean: {
+            before_build: {
+                src: ['<%= path.build %>']
+            },
+            after_build: {
+                src: ['<%= path.tmp %>']
+            }
+        },
         jshint: {
-            main: ['resources/scripts/*.js']
+            main: ['static/scripts/*.js']
+        },
+        sass: {
+            options: {
+                sourcemap: 'none',
+                style: 'compressed',
+                compass: true
+            },
+            dist: {
+                files: {
+                    '<%= path.css %>/styles.min.css': '<%= path.scss %>/styles.scss'
+                }
+            }
+        },
+        bower_concat: {
+            all: {
+                dest: '<%= path.tmp %>/_bower.js'
+            }
         },
         concat: {
-            dist: {
-                src: ['resources/scripts/*.js'],
-                dest: 'resources/static/js/app.js'
+            scripts: {
+                src: [
+                    '<%= path.tmp %>/js/_bower.js',
+                    '<%= path.libs %>/**/*.js',
+                    'static/scripts/*.js'
+                ],
+                dest: '<%= path.tmp %>/app.js'
+            },
+            styles: {
+                src: [
+                    '<%= path.bower %>/bootstrap/dist/css/bootstrap.min.css',
+                    '<%= path.bower %>/bootstrap/dist/css/bootstrap-theme.min.css',
+                    '<%= path.libs %>/font-awesome/css/font-awesome.min.css',
+                    '<%= path.css %>/styles.min.css'
+                ],
+                dest: '<%= path.build %>/styles.min.css'
             }
         },
         uglify: {
             dist: {
-                src: 'resources/static/js/app.js',
-                dest: 'resources/static/js/app.min.js'
+                src: '<%= path.tmp %>/app.js',
+                dest: '<%= path.build %>/app.min.js'
             }
         },
         imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'resources/graphics/',
+                    cwd: 'static/graphics/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'resources/static/img/'
+                    dest: '<%= path.build %>/img/'
                 }]
-            }
-        },
-        sass: {
-            options: {
-                sourcemap: 'none',
-                style: 'expanded',
-                compass: true
-            },
-            dist: {
-                options: {
-                    style: 'compressed'
-                },
-                files: {
-                    'resources/static/css/styles.css': 'resources/scss/styles.scss'
-                }
             }
         },
         watch: {
             options: {
                 livereload: true
             },
-            scripts: {
-                files: ['resources/scripts/**/*.js'],
-                tasks: ['concat']
-                // tasks: ['concat', 'uglify']
-            },
             css: {
-                files: ['resources/scss/**/*.scss'],
+                files: ['<%= path.scss %>/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false
                 }
             },
             graphics: {
-                files: ['resources/graphics/**/*.{png,jpg,gif}'],
+                files: ['static/graphics/**/*.{png,jpg,gif}'],
                 tasks: ['imagemin']
             }
         }
     });
 
-    require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass']);
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', [
+        'clean:before_build',
+        'jshint',
+        'sass',
+        'bower_concat',
+        'concat',
+        'uglify',
+        'imagemin',
+        'clean:after_build'
+    ]);
 };

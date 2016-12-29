@@ -31,7 +31,9 @@ exports.logout = function (req, res, next) {
                     next(err);
                     return;
                 }
-                res.render('login', {message: ''});
+                req.user = res.locals.user = null;
+                res.locals.authenticated = null;
+                res.redirect('/login');
             });
         } else {
             next(new Error('Logout failed'));

@@ -1,15 +1,15 @@
 var Project = require('../models').Project;
 var User = require('../models').User;
 var ProjectType = require('../models').ProjectType;
-var projectsConfig = require('../../config').get('projects');
+var projectsConfig = require('../config').get('projects');
 
 exports.getAll = function (req, res) {
     res.render('projects/project-page');
 };
 
 exports.getProjectsForPage = function(req, res) {
-    var page = +req.param('page');
-    var query = req.param('query');
+    var page = +req.query.page;
+    var query = req.query.query;
     var limit = projectsConfig.countLimitOnPage;
     var offset = (page - 1) * limit;
     Project.findAndCountAll({

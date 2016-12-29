@@ -32,7 +32,7 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "todo-manager",
     "options": {
       "host": "localhost",

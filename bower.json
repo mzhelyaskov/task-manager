@@ -1,0 +1,22 @@
+{
+  "name": "TASK-Manager",
+  "homepage": "https://github.com/mzhelyaskov/todolist",
+  "authors": [
+    "Mykhailo Zheliaskov <mykhailo.zheliaskov@decerto.pl>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-validation": "^1.16.0",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}

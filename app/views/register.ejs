@@ -1,91 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TASK Manager</title>
-    <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-    <link href="/libs/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
-    <link href="/libs/bootstrap/css/bootstrap-social.css" rel="stylesheet"/>
-    <link href="/css/styles.css" rel="stylesheet"/>
-</head>
-<body class="auth-page">
-    <%- partial('partials/navbar-top') %>
-    <div class="auth-container register-container">
-        <div class="auth-layout">
-            <span class="auth-form-title">Register</span>
-            <div class="auth-form-container">
-                <form class="register-form" action="/register" method="post" novalidate>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label for="username">Username:</label>
-                            <div class="form-group <% if (errors.username) { %>has-error<% } %>">
-                                <input type="text" class="form-control" name="username" placeholder="min. 4 character" value="<%- fields.username %>" autocomplete="off">
-                                <span class="glyphicon glyphicon-user"></span>
-                                <% if (errors.username) { %><span class="help-block"><%= errors.username.msg %></span><% } %>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="email">Email:</label>
-                            <div class="form-group <% if (errors.email) { %>has-error<% } %>">
-                                <input type="email" class="form-control" name="email" placeholder="email" value="<%- fields.email %>">
-                                <span class="glyphicon glyphicon-envelope"></span>
-                                <% if (errors.email) { %><span class="help-block"><%= errors.email.msg %></span><% } %>
-                            </div>
+<% layout('layout') -%>
+
+<%- partial('partials/navbar-top') %>
+<div class="auth-container register-container">
+    <div class="auth-layout">
+        <span class="auth-form-title">Register</span>
+        <div class="auth-form-container">
+            <form class="register-form" action="/register" method="post" novalidate>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="username">Username:</label>
+                        <div class="form-group <% if (errors.username) { %>has-error<% } %>">
+                            <input type="text" class="form-control" name="username" placeholder="min. 4 character" value="<%- fields.username %>" autocomplete="off">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <% if (errors.username) { %><span class="help-block"><%= errors.username.msg %></span><% } %>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label for="firstName">First Name:</label>
-                            <div class="form-group <% if (errors.firstName) { %>has-error<% } %>">
-                                <input type="text" class="form-control" name="firstName" placeholder="First name" value="<%- fields.firstName %>" autocomplete="off">
-                                <span class="glyphicon glyphicon-user"></span>
-                                <% if (errors.firstName) { %><span class="help-block"><%= errors.firstName.msg %></span><% } %>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="lastName">Last Name:</label>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="lastName" placeholder="Last name" value="<%- fields.lastName %>" autocomplete="off">
-                                <span class="glyphicon glyphicon-user"></span>
-                                <% if (errors.lastName) { %><span class="help-block"><%= errors.lastName.msg %></span><% } %>
-                            </div>
+                    <div class="col-sm-6">
+                        <label for="email">Email:</label>
+                        <div class="form-group <% if (errors.email) { %>has-error<% } %>">
+                            <input type="email" class="form-control" name="email" placeholder="email" value="<%- fields.email %>">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <% if (errors.email) { %><span class="help-block"><%= errors.email.msg %></span><% } %>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label for="password">Password:</label>
-                            <div class="form-group <% if (errors.password) { %>has-error<% } %>">
-                                <input type="password" class="form-control" name="password" placeholder="min. 8 character" value="<%- fields.password %>">
-                                <span class="glyphicon glyphicon-lock"></span>
-                                <% if (errors.password) { %><span class="help-block"><%= errors.password.msg %></span><% } %>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="password2">Password [Again]:</label>
-                            <div class="form-group <% if (errors.password2) { %>has-error<% } %>">
-                                <input type="password" class="form-control" name="password2" placeholder="min. 8 character" value="<%- fields.password2 %>">
-                                <span class="glyphicon glyphicon-lock"></span>
-                                <% if (errors.password2) { %><span class="help-block"><%= errors.password2.msg %></span><% } %>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="firstName">First Name:</label>
+                        <div class="form-group <% if (errors.firstName) { %>has-error<% } %>">
+                            <input type="text" class="form-control" name="firstName" placeholder="First name" value="<%- fields.firstName %>" autocomplete="off">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <% if (errors.firstName) { %><span class="help-block"><%= errors.firstName.msg %></span><% } %>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-warning">Sign Up</button>
-                </form>
+                    <div class="col-sm-6">
+                        <label for="lastName">Last Name:</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="lastName" placeholder="Last name" value="<%- fields.lastName %>" autocomplete="off">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <% if (errors.lastName) { %><span class="help-block"><%= errors.lastName.msg %></span><% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="password">Password:</label>
+                        <div class="form-group <% if (errors.password) { %>has-error<% } %>">
+                            <input type="password" class="form-control" name="password" placeholder="min. 8 character" value="<%- fields.password %>">
+                            <span class="glyphicon glyphicon-lock"></span>
+                            <% if (errors.password) { %><span class="help-block"><%= errors.password.msg %></span><% } %>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="password2">Password [Again]:</label>
+                        <div class="form-group <% if (errors.password2) { %>has-error<% } %>">
+                            <input type="password" class="form-control" name="password2" placeholder="min. 8 character" value="<%- fields.password2 %>">
+                            <span class="glyphicon glyphicon-lock"></span>
+                            <% if (errors.password2) { %><span class="help-block"><%= errors.password2.msg %></span><% } %>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <% if (message) { %>
+        <div class="auth-layout message-window" role="alert">
+            <div class="dialog-close-btn">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+            </div>
+            <div class="message-container">
+                <%= message %>
             </div>
         </div>
-        <% if (message) { %>
-            <div class="auth-layout message-window" role="alert">
-                <div class="dialog-close-btn">
-                    <span class="glyphicon glyphicon-remove-circle"></span>
-                </div>
-                <div class="message-container">
-                    <%= message %>
-                </div>
-            </div>
-        <% } %>
-    </div>
-    <script src="/libs/jquery/jquery.js"></script>
-    <script src="/libs/bootstrap/js/bootstrap.js"></script>
-    <script src="/js/app.min.js"></script>
-</body>
-</html>
+    <% } %>
+</div>

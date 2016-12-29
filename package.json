@@ -1,6 +1,6 @@
 {
-  "name": "TodoList",
-  "version": "0.0.0",
+  "name": "TASK-Manager",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-bower-concat": "^1.0.0",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
@@ -32,6 +34,6 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-newer": "^1.2.0",
     "jshint-stylish": "^2.2.1",
-    "matchdep": "^1.0.1"
+    "load-grunt-tasks": "^3.5.2"
   }
 }

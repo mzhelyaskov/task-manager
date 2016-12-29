@@ -2,5 +2,8 @@
 node_modules/
 migrations/
 materials/
-static/
-.*
+static/bower_components/
+static/build/
+static/tmp/
+static/css/
+.sass-cache/

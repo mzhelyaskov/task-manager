@@ -16,7 +16,7 @@ body {
 
 /* ------------- LOGIN ------------- */
 .auth-page {
-  background: url("/img/background.jpg") no-repeat;
+  background: url("/build/img/background.jpg") no-repeat;
   height: 100%;
   background-size: cover;
 }
@@ -123,20 +123,22 @@ body {
   color: #fff;
 }
 
-.login-social-buttons .btn-facebook {
-  float: left;
-}
-
-.login-social-buttons .btn-google {
-  float: right;
-}
-
 .login-with {
   text-align: center;
 }
 
-.login-with .login-social-buttons {
+.login-social-buttons {
   margin-top: 24px;
+
+  a {
+    width: 130px;
+  }
+
+  i {
+    float: left;
+    padding-top: 4px;
+    padding-right: 9px;
+  }
 }
 
 .login-with .login-with-left-line {
